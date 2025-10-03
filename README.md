@@ -1,16 +1,34 @@
-# React + Vite
+# Shadcn setup for vite+ react +javascript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the setup video ...[shadcn-setup-js](https://youtu.be/aMX_DYK5LAk?si=Vop3Y07mgYDsA2Rf)
 
-Currently, two official plugins are available:
+# Steps
+### 1. install tailwind :  npm install tailwindcss @tailwindcss/vite   </br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 2. in index.css :  @import "tailwindcss";  </br>
 
-## React Compiler
+### 3. create jsconfig.json file in root and use this =>
+from shadcn docs copy the config.json file and clear the references :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+{ </br>
+  &nbsp;  "files": [ ], </br>
+  &nbsp;  "references": [ ], </br>
+  &nbsp;  "compilerOptions": {</br>
+ &nbsp;   &nbsp;  &nbsp; "baseUrl": ".",</br>
+  &nbsp;   &nbsp;  &nbsp; "paths": {</br>
+  &nbsp;   &nbsp;  &nbsp;  &nbsp;  "@/*": ["./src/*"]</br>
+  &nbsp;  &nbsp;    }</br>
+  &nbsp;  }</br>
+}</br>
 
-## Expanding the ESLint configuration
+### 4. According to the shadcn docs skip the next file setup (tsconfig.app.json)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 5. Run this command : npm install -D @types/node
+
+### 6. Update vite.config.js according to shadcn
+
+### 7. Run this cli : npx shadcn@latest init
+
+### 8. Setup is done. Now whatever component you want to use just install it. As example to install button use this command :
+npx shadcn@latest add button
+this will add the button.jsx in components/ui folder
